@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>稀土与关键矿物供应冲击｜半导体产业链情景模型</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18233b;--line:#2b3854;--text:#e8eefb;--muted:#9eacc7;--cyan:#70d7e8;--blue:#7aa7ff;--amber:#f5c46b;--red:#f07f83;--green:#75d6ad;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#0b1020,#0c1425 65%,#0a1020);color:var(--text);font:14px/1.55 Inter,"PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:1440px;margin:auto;padding:28px 24px 52px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}.hero{display:flex;gap:24px;justify-content:space-between;align-items:flex-end;margin:8px 0 22px}.hero h1{font-size:clamp(25px,3.2vw,40px);line-height:1.14;margin:8px 0 10px;letter-spacing:-.035em}.hero p{max-width:830px;color:var(--muted);margin:0}.stamp{border:1px solid var(--line);padding:10px 13px;border-radius:12px;color:var(--muted);white-space:nowrap;font-size:12px;background:#10192b}
+.notice{border:1px solid #69532b;background:#231e16;color:#f4dcae;padding:13px 16px;border-radius:12px;margin:20px 0 24px}.layout{display:grid;grid-template-columns:350px minmax(0,1fr);gap:18px;align-items:start}.panel{background:rgba(18,26,45,.94);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 12px 32px rgba(0,0,0,.14)}.panel h2{font-size:16px;margin:0 0 14px}.panel h3{font-size:13px;margin:18px 0 10px;color:#c8d7f2}.controls{position:sticky;top:12px}.control{margin:14px 0}.control-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:6px}.control label{color:#c8d7f2;font-size:12px}.value{font-variant-numeric:tabular-nums;color:var(--cyan);font-weight:700}.control small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.control input[type=range]{width:100%;accent-color:var(--cyan)}.control input[type=number],.material-table input{width:68px;background:#0c1425;border:1px solid #354564;color:var(--text);padding:6px 7px;border-radius:7px;font:inherit;font-size:12px}.presets{display:grid;grid-template-columns:1fr 1fr;gap:7px}.presets button,.actions button{border:1px solid #3a4d70;border-radius:9px;color:#d9e5fa;background:#182640;padding:8px 9px;cursor:pointer;font-size:12px}.presets button:hover,.actions button:hover{border-color:var(--cyan);background:#20314e}.hint{color:var(--muted);font-size:11px;margin:8px 0 0}.right{display:grid;gap:18px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.metric{background:linear-gradient(145deg,#17233a,#111a2c);border:1px solid var(--line);border-radius:13px;padding:14px}.metric .k{color:var(--muted);font-size:11px}.metric .v{font-size:27px;font-weight:750;letter-spacing:-.04em;margin:4px 0 2px;font-variant-numeric:tabular-nums}.metric .sub{font-size:10px;color:var(--muted)}.tone{color:var(--cyan)}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.chartbox{background:#0d1628;border:1px solid var(--line);border-radius:12px;padding:12px}.charttitle{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#dce7fa;margin:0 0 8px}.charttitle span{color:var(--muted);font-size:10px}canvas{width:100%;height:220px;display:block}.barlist{display:grid;gap:11px}.barrow{display:grid;grid-template-columns:115px 1fr 48px;gap:10px;align-items:center;font-size:12px}.barlabel{color:#c8d7f2}.track{height:9px;background:#25334d;border-radius:20px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--amber),var(--red));border-radius:20px}.barval{text-align:right;font-variant-numeric:tabular-nums;color:#dce7fa}.tablewrap{overflow:auto}.material-table{width:100%;border-collapse:collapse;min-width:850px;font-size:11px}.material-table th{text-align:left;color:#9eacc7;font-weight:600;padding:9px 7px;border-bottom:1px solid var(--line)}.material-table td{padding:8px 7px;border-bottom:1px solid rgba(43,56,84,.65);white-space:nowrap}.material-table td:first-child{font-weight:700;color:#dce7fa}.material-table input{width:62px;padding:5px}.tag{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;border:1px solid #3b4c68;color:#bdcce5}.tag.warn{color:#f4d39b;border-color:#6f562e}.tag.ok{color:#92e0bf;border-color:#32664f}.insights{display:grid;grid-template-columns:1fr 1fr;gap:12px}.insight{background:#0d1628;border:1px solid var(--line);padding:13px;border-radius:11px}.insight strong{display:block;font-size:12px;margin-bottom:5px}.insight p{margin:0;color:var(--muted);font-size:11px}.method{color:var(--muted);font-size:12px}.method details{border-top:1px solid var(--line);padding:12px 0}.method summary{color:#d7e4f8;cursor:pointer;font-weight:650}.method p{margin:8px 0}.method ul{padding-left:19px}.sources a{color:#8fc5ff;text-decoration:none}.sources a:hover{text-decoration:underline}.footer{color:#71809d;font-size:10px;margin-top:20px}.actions{display:flex;gap:8px;flex-wrap:wrap}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:5px 9px;background:#13233a;border:1px solid #31496b;color:#bbd0ef;font-size:10px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+@media(max-width:1050px){.layout{grid-template-columns:1fr}.controls{position:static}.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.wrap{padding:18px 12px 35px}.hero{display:block}.stamp{display:inline-block;margin-top:14px}.two,.insights{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}.metric .v{font-size:23px}.panel{padding:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Geopolitics × Critical Materials × Semiconductor Supply Chain</div>
+  <div class="hero">
+    <div><h1>稀土与关键矿物供应冲击<br>半导体产业链情景模型</h1><p>把出口管制从“新闻事件”转化为可拆解的供应链变量：库存能撑多久、非中国供应能补多少、替代需要多长时间、盟友能否协同扩产，以及这些因素最终会在哪些半导体环节形成瓶颈。</p></div>
+    <div class="stamp">模型版本 1.0 · 截至 2026-11-16</div>
+  </div>
+  <div class="notice"><b>先读这一条：</b>本工具是压力测试模型，不是对美国芯片减产或 SOX 涨跌的点位预测。半导体企业的材料库存、供应商结构和材料用量通常不完整公开；页面中的行业参数是可修改的情景假设。模型刻意区分稀土与镓、锗、锑等非稀土关键矿物，不能把这些品类合并成一个“稀土依赖率”。</div>
+  <div class="layout">
+    <aside class="panel controls">
+      <h2>一、冲击与缓冲参数</h2>
+      <div class="presets">
+        <button data-preset="base">基准：许可制延续</button><button data-preset="target">定向收紧</button>
+        <button data-preset="hard">广泛中断</button><button data-preset="ally">盟友协同缓冲</button>
+      </div>
+      <p class="hint">预设仅用于快速建立情景；切换后仍可逐项调整。</p>
+      <div class="control"><div class="control-head"><label for="shock">中国相关供给削减幅度</label><span class="value" id="shockV">60%</span></div><input id="shock" type="range" min="0" max="100" value="60"><small>与材料表中的“管制覆盖”相乘，形成各材料实际供给冲击；不等于美国全部稀土进口减少比例。</small></div>
+      <div class="control"><div class="control-head"><label for="duration">冲击持续时间</label><span class="value" id="durationV">12 个月</span></div><input id="duration" type="range" min="1" max="36" value="12"></div>
+      <div class="control"><div class="control-head"><label for="horizon">观察期</label><span class="value" id="horizonV">36 个月</span></div><input id="horizon" type="range" min="6" max="48" step="1" value="36"></div>
+      <div class="control"><div class="control-head"><label for="inventory">全行业库存缓冲系数</label><span class="value" id="inventoryV">100%</span></div><input id="inventory" type="range" min="0" max="200" value="100"><small>100% 使用材料表内的基准库存；50% 表示只有基准库存的一半可用。</small></div>
+      <h3>替代与协作机制</h3>
+      <div class="control"><div class="control-head"><label for="altSpeed">替代产能爬坡速度</label><span class="value" id="altSpeedV">50%</span></div><input id="altSpeed" type="range" min="0" max="100" value="50"><small>影响澳洲、美国、欧洲、日本及其他来源扩产/增供的兑现速度。</small></div>
+      <div class="control"><div class="control-head"><label for="cooperation">国际合作有效度</label><span class="value" id="cooperationV">55%</span></div><input id="cooperation" type="range" min="0" max="100" value="55"><small>体现盟友融资、长期包销、联合库存、跨境加工、许可协调与物流通道的综合效果。</small></div>
+      <div class="control"><div class="control-head"><label for="recycling">回收能力动员程度</label><span class="value" id="recyclingV">35%</span></div><input id="recycling" type="range" min="0" max="100" value="35"></div>
+      <div class="control"><div class="control-head"><label for="substitution">材料替代/节约力度</label><span class="value" id="substitutionV">30%</span></div><input id="substitution" type="range" min="0" max="100" value="30"><small>包括减少单位用量、替换磁体方案、材料配方调整；受设备认证和工艺良率约束。</small></div>
+      <div class="control"><div class="control-head"><label for="priority">半导体供应优先保障</label><span class="value" id="priorityV">65%</span></div><input id="priority" type="range" min="0" max="100" value="65"><small>假设短缺时政府/客户将部分材料优先分配给半导体、国防等关键用途。</small></div>
+      <div class="control"><div class="control-head"><label for="logistics">盟友物流/合规摩擦</label><span class="value" id="logisticsV">25%</span></div><input id="logistics" type="range" min="0" max="100" value="25"><small>越高代表跨境许可、运输、加工认证和供应商切换越慢；协作效果会被其折损。</small></div>
+      <div class="actions"><button id="reset">恢复默认值</button><button id="export">导出本次情景 CSV</button></div>
+    </aside>
+    <main class="right">
+      <section class="metrics">
+        <div class="metric"><div class="k">半导体链综合供给压力</div><div class="v tone" id="overall">—</div><div class="sub">观察期内平均未满足需求指数</div></div>
+        <div class="metric"><div class="k">最紧张材料</div><div class="v" id="tightest">—</div><div class="sub" id="tightestSub">按未满足需求排序</div></div>
+        <div class="metric"><div class="k">首个库存耗尽节点</div><div class="v" id="depletion">—</div><div class="sub">若库存未耗尽则显示“未耗尽”</div></div>
+        <div class="metric"><div class="k">SOX 链条风险压力</div><div class="v" id="soxRisk">—</div><div class="sub">盈利/交付压力代理指标，不是指数回报率</div></div>
+      </section>
+      <section class="panel">
+        <h2>二、供应链动态：库存如何吸收冲击</h2>
+        <div class="two">
+          <div class="chartbox"><div class="charttitle">半导体关键环节未满足需求 <span>月度 · %</span></div><canvas id="segmentChart" width="720" height="280"></canvas></div>
+          <div class="chartbox"><div class="charttitle">关键材料未满足需求 <span>月度 · %</span></div><canvas id="materialChart" width="720" height="280"></canvas></div>
+        </div>
+        <p class="hint">曲线在库存尚可覆盖缺口时会保持低位；库存耗尽后，供应缺口才逐步转化为真实的交付/产能风险。供给恢复后，库存回补仍需要时间。</p>
+      </section>
+      <section class="panel">
+        <h2>三、产业链影响拆分</h2>
+        <div class="barlist" id="segmentBars"></div>
+        <div class="insights" style="margin-top:16px" id="segmentNotes"></div>
+      </section>
+      <section class="panel">
+        <h2>四、材料层参数：库存、依赖、替代与认证周期</h2>
+        <p class="hint">可直接编辑每种材料的假设。“管制覆盖”用于表示该材料/环节受到本次措施波及的比例。中国供给占比是该材料/加工环节的模型暴露值，不应被理解为美国对中国进口统计的统一口径。替代上限是可额外动员的潜在供给占需求比例，爬坡与认证周期不同。</p>
+        <div class="tablewrap"><table class="material-table"><thead><tr><th>材料</th><th>属性</th><th>中国供给暴露</th><th>管制覆盖</th><th>库存（月）</th><th>替代供给上限</th><th>替代爬坡（月）</th><th>回收上限</th><th>可节约/替代上限</th><th>认证滞后（月）</th><th>观察期平均缺口</th></tr></thead><tbody id="materialRows"></tbody></table></div>
+      </section>
+      <section class="panel">
+        <h2>五、情景解释与投资映射</h2>
+        <div class="insights" id="investmentNotes"></div>
+        <p class="hint" style="margin-top:12px">SOX 风险压力由设备、晶圆制造、封装测试与芯片设计等环节的材料暴露加权形成。该指数只衡量供应链扰动的相对强弱，不包含半导体需求周期、利率、资本开支、库存周期、估值、汇率和个股竞争力，因此不能直接换算成 SOX 涨跌幅。</p>
+      </section>
+      <section class="panel method">
+        <h2>六、模型口径、公式与限制</h2>
+        <details open><summary>模型如何计算库存与缺口？</summary><p>每种材料以“正常月需求 = 1”归一化。每月供给由中国来源、现有非中国来源、替代增量、回收增量构成；需求则扣除已验证可实现的材料节约/替代。若供给低于需求，先消耗库存；库存用尽后，剩余差额才记为未满足需求。供应恢复后，剩余供给优先回补库存。</p><p>替代供给爬坡不是即时发生：模型按替代周期和认证滞后逐月释放产能；国际合作提升可动员份额，但会被物流/合规摩擦打折。该结构用来避免“宣布投资 = 当月即可形成合格产出”的错误。</p></details>
+        <details><summary>为什么不把稀土短缺等同于晶圆减产？</summary><p>稀土在芯片本体的直接材料成本通常不是最主要部分。更重要的传导路径可能是高性能永磁体、电机、泵、冷却/真空系统、设备零部件、耐高温涂层/靶材等工业环节；且设备供应商有库存、备件和替代设计。模型用材料暴露权重表达相对敏感性，而不是声称每一座晶圆厂都会因稀土断供停摆。</p></details>
+        <details><summary>“一滴血原则”与 0.1% 门槛</summary><p>“一滴血”不是法规原文。此前相关出口管制公告对特定境外物项设有域外适用条件，其中涉及中国来源稀土、使用中国稀土相关技术等条件；报道与法律分析提及的 0.1% 是特定规则下的价值比例门槛，不宜简化成“任何产品只要含有任意微量中国稀土就自动受管”。实际适用须逐条核对物项、技术来源、价值比例、最终用户/用途及许可要求。</p></details>
+        <details><summary>模型没有做什么？</summary><ul><li>没有把库存视为全部可自由调用；现实库存受客户所有权、规格、地理位置、质量认证和合同限制。</li><li>没有假设稀土矿、分离氧化物、金属、合金、磁材之间可无摩擦互换；各加工环节都可能形成瓶颈。</li><li>没有把镓、锗、锑算作稀土；它们属于不同的关键矿物链，终端用途与替代路径不同。</li><li>没有对 ASML、蔡司、辛德豪瑟等单一供应商的实际库存、材料配方或受控产品占比作无依据量化。</li><li>没有预测个股收益或估值。SOX 成分与权重也会随指数定期调整。</li></ul></details>
+        <details class="sources"><summary>参考资料与使用方式</summary><ul>
+          <li><a href="https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_6cb42957741440c6984de696b70df9ae.html" target="_blank" rel="noopener">中国商务部：2025年第62号公告（稀土相关技术出口管制）</a></li>
+          <li><a href="https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_8990fedae8fa462eb02cc9bae5034e91.html" target="_blank" rel="noopener">中国商务部：2026年第1号公告（对日本两用物项出口管制）</a></li>
+          <li><a href="https://www.csis.org/analysis/one-year-after-busan-has-china-kept-its-rare-earth-promises" target="_blank" rel="noopener">CSIS：One Year After Busan: Has China Kept Its Rare Earth Promises?</a></li>
+          <li><a href="https://www.csis.org/analysis/chinas-rare-earth-campaign-against-japan" target="_blank" rel="noopener">CSIS：中国对日稀土管控分析</a></li>
+          <li><a href="https://www.usgs.gov/centers/national-minerals-information-center/rare-earths-statistics-and-information" target="_blank" rel="noopener">USGS：Rare Earths Statistics and Information</a></li>
+          <li><a href="https://www.iea.org/topics/critical-minerals" target="_blank" rel="noopener">IEA：Critical Minerals</a></li>
+          <li><a href="https://www.reuters.com/business/retail-consumer/bessent-says-treasury-favored-limits-megaspeed-2026-11-13/" target="_blank" rel="noopener">Reuters（2026-11-13）：Bessent 对 Megaspeed 出口管制的表态</a></li>
+        </ul><p>本页面的材料参数默认值是用于压力测试的可调整先验，不是上述来源逐项披露的企业库存/采购份额。若要用于真实组合决策，应进一步把设备商、晶圆厂、零部件商的财报披露与供应商访谈数据输入模型。</p></details>
+      </section>
+    </main>
+  </div>
+  <div class="footer">离线单文件 · 无外部图表库 · 所有情景计算在浏览器本地完成 · 结果仅供研究与风险分析，不构成投资建议</div>
+</div>
+<script>
+const materials = [
+ {id:'dy',name:'镝 / 铽（Dy/Tb）',kind:'重稀土；磁材添加剂',china:88,target:90,stock:2.5,alt:18,ramp:24,recycle:5,sub:12,lag:9,critical:0.95},
+ {id:'y',name:'钇（Y）',kind:'稀土；陶瓷/涂层等',china:82,target:95,stock:2.0,alt:15,ramp:20,recycle:4,sub:8,lag:12,critical:0.90},
+ {id:'nd',name:'钕镨（NdPr）/磁材',kind:'稀土；永磁体链',china:85,target:80,stock:3.0,alt:25,ramp:20,recycle:9,sub:20,lag:8,critical:0.85},
+ {id:'ga',name:'镓（Ga）',kind:'非稀土；化合物半导体',china:90,target:40,stock:3.0,alt:20,ramp:18,recycle:8,sub:22,lag:10,critical:0.90},
+ {id:'ge',name:'锗（Ge）',kind:'非稀土；光电/红外等',china:65,target:40,stock:4.0,alt:25,ramp:18,recycle:12,sub:18,lag:9,critical:0.70},
+ {id:'sb',name:'锑（Sb）',kind:'非稀土；合金/阻燃等',china:60,target:35,stock:3.5,alt:25,ramp:15,recycle:8,sub:25,lag:7,critical:0.55}
+];
+const segments = [
+ {id:'equip',name:'半导体设备与关键零部件',weight:0.30,desc:'对高性能磁材、电机/泵、特种涂层及高纯材料的间接暴露更高；设备厂通常有备件、供应商认证和工程替代空间。',exp:{dy:.30,y:.72,nd:.35,ga:.10,ge:.20,sb:.08}},
+ {id:'fab',name:'晶圆制造与厂务系统',weight:0.32,desc:'影响多经由冷却、真空、搬运、厂务电机和设备维护传导；真正风险是关键部件无法及时维修/替换，而非稀土直接成为晶圆主材。',exp:{dy:.18,y:.34,nd:.32,ga:.28,ge:.14,sb:.08}},
+ {id:'pack',name:'封装与测试',weight:0.15,desc:'总体直接稀土依赖较低，但部分高频/光电、引线框架、阻燃和特殊合金材料可能受到非稀土关键矿物约束。',exp:{dy:.05,y:.04,nd:.08,ga:.22,ge:.25,sb:.32}},
+ {id:'design',name:'芯片设计与无晶圆厂商',weight:0.18,desc:'材料冲击更多通过代工供给、封装交付、服务器系统成本和客户资本开支间接传导；对供给短缺的直接敏感度低于制造环节。',exp:{dy:.02,y:.02,nd:.02,ga:.08,ge:.10,sb:.03}},
+ {id:'dc',name:'AI 数据中心配套（非 SOX 核心）',weight:0.05,desc:'高性能磁材可能用于电机、风扇、泵及电源/冷却系统；更多影响系统集成和交付，不应与 GPU 芯片制造短缺混为一谈。',exp:{dy:.22,y:.03,nd:.62,ga:.06,ge:.06,sb:.03}}
+];
+const $=id=>document.getElementById(id); const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)); const pct=v=>(v*100).toFixed(1)+'%';
+const controlIds=['shock','duration','horizon','inventory','altSpeed','cooperation','recycling','substitution','priority','logistics'];
+const labels={shock:v=>v+'%',duration:v=>v+' 个月',horizon:v=>v+' 个月',inventory:v=>v+'%',altSpeed:v=>v+'%',cooperation:v=>v+'%',recycling:v=>v+'%',substitution:v=>v+'%',priority:v=>v+'%',logistics:v=>v+'%'};
+let latest=null;
+function readControls(){let o={};controlIds.forEach(id=>o[id]=+$(id).value);return o;}
+function setControls(obj){Object.entries(obj).forEach(([k,v])=>{if($(k))$(k).value=v;});update();}
+function renderMaterialRows(){ $('materialRows').innerHTML=materials.map(m=>`<tr><td>${m.name}</td><td><span class="tag">${m.kind}</span></td><td><input type="number" min="0" max="100" step="1" data-mid="${m.id}" data-key="china" value="${m.china}">%</td><td><input type="number" min="0" max="100" step="1" data-mid="${m.id}" data-key="target" value="${m.target}">%</td><td><input type="number" min="0" max="24" step="0.5" data-mid="${m.id}" data-key="stock" value="${m.stock}"></td><td><input type="number" min="0" max="100" step="1" data-mid="${m.id}" data-key="alt" value="${m.alt}">%</td><td><input type="number" min="1" max="60" step="1" data-mid="${m.id}" data-key="ramp" value="${m.ramp}"></td><td><input type="number" min="0" max="50" step="1" data-mid="${m.id}" data-key="recycle" value="${m.recycle}">%</td><td><input type="number" min="0" max="60" step="1" data-mid="${m.id}" data-key="sub" value="${m.sub}">%</td><td><input type="number" min="0" max="36" step="1" data-mid="${m.id}" data-key="lag" value="${m.lag}"></td><td id="gap-${m.id}">—</td></tr>`).join('');
+ $('materialRows').querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{let m=materials.find(x=>x.id===inp.dataset.mid);m[inp.dataset.key]=+inp.value;update();})); }
+function simulate(c){
+ const horizon=c.horizon, shock=c.shock/100, duration=c.duration, invScale=c.inventory/100, altSpeed=c.altSpeed/100, coop=c.cooperation/100, rec=c.recycling/100, sub=c.substitution/100, priority=c.priority/100, friction=c.logistics/100;
+ let paths={}, matSummary={}; let firstDepletion=null;
+ materials.forEach(m=>{
+  let stock=m.stock*invScale, initial=stock, path=[], shortageSum=0, peak=0, depleted=null, china=m.china/100;
+  for(let t=1;t<=horizon;t++){
+   let isShock=(t<=duration?shock:0)*(m.target/100);
+   // Cooperation unlocks more of the alternative capacity; logistics and qualification slow its arrival.
+   let delay=m.lag + friction*5 + (1-coop)*3;
+   let rampProgress=clamp((t-delay)/Math.max(1,m.ramp/Math.max(.25,.55+altSpeed)),0,1);
+   let altSupply=(m.alt/100)*rampProgress*(.25+.75*coop)*(1-.55*friction);
+   // Recycling starts small and builds as collection and processing channels are mobilized.
+   let recycleSupply=(m.recycle/100)*rec*clamp((t-1)/Math.max(3,10-7*rec),0,1);
+   let demand=1-(m.sub/100)*sub*clamp((t-m.lag*.35)/Math.max(3,m.lag),0,1);
+   let chinaSupply=china*(1-isShock);
+   let existingNonChina=1-china;
+   let supply=chinaSupply+existingNonChina+altSupply+recycleSupply;
+   let gap=Math.max(0,demand-supply), surplus=Math.max(0,supply-demand);
+   let covered=Math.min(stock,gap); stock-=covered;
+   let rawUnmet=Math.max(0,gap-covered);
+   // Priority allocation is not a new source of material; it only shifts who bears the shortage.
+   let semiUnmet=rawUnmet*(1-.35*priority);
+   // A small system-level friction penalty captures supplier qualification/logistics bottlenecks.
+   let frictionPenalty=(isShock>0?friction*.025:0);
+   let unmet=clamp(semiUnmet+frictionPenalty,0,1);
+   stock=Math.min(initial*1.35,stock+surplus*.65);
+   if(!depleted && stock<=0.0001 && gap>0.0001){depleted=t; if(firstDepletion===null||t<firstDepletion)firstDepletion=t;}
+   path.push({month:t,unmet,rawUnmet,stock,supply,demand,chinaSupply,altSupply,recycleSupply});
+   shortageSum+=unmet; peak=Math.max(peak,unmet);
+  }
+  paths[m.id]=path; matSummary[m.id]={avg:shortageSum/horizon,peak,depleted,initial,ending:stock};
+ });
+ let segPaths={}, segSummary={};
+ segments.forEach(s=>{let p=[],sum=0,peak=0;for(let t=0;t<horizon;t++){
+   let weighted=0,den=0; materials.forEach(m=>{let e=s.exp[m.id]||0;weighted+=paths[m.id][t].unmet*e*m.critical;den+=e*m.critical;});
+   let value=den?clamp(weighted/den):0;
+   // Qualification and process redesign make some impacts persist after the initial commodity shock.
+   p.push(value);sum+=value;peak=Math.max(peak,value);
+  }segPaths[s.id]=p;segSummary[s.id]={avg:sum/horizon,peak};});
+  const soxWeight={equip:.34,fab:.30,pack:.16,design:.20}; let sox=Object.entries(soxWeight).reduce((a,[k,w])=>a+segSummary[k].avg*w,0);
+  let semiWeight={equip:.30,fab:.32,pack:.15,design:.18,dc:.05}; let overall=Object.entries(semiWeight).reduce((a,[k,w])=>a+segSummary[k].avg*w,0);
+ return {paths,matSummary,segPaths,segSummary,sox,overall,firstDepletion,horizon};
+}
+function update(){let c=readControls();controlIds.forEach(id=>$(id+'V').textContent=labels[id](c[id]));
+ latest=simulate(c);
+ $('overall').textContent=pct(latest.overall);$('soxRisk').textContent=pct(latest.sox);
+ const top=materials.slice().sort((a,b)=>latest.matSummary[b.id].avg-latest.matSummary[a.id].avg)[0];$('tightest').textContent=top.name.split('（')[0];$('tightestSub').textContent='平均未满足需求 '+pct(latest.matSummary[top.id].avg);
+ $('depletion').textContent=latest.firstDepletion?('第 '+latest.firstDepletion+' 月'):'未耗尽';
+ renderBars();renderCharts();renderInsights();
+ materials.forEach(m=>{let el=$('gap-'+m.id);if(el)el.textContent=pct(latest.matSummary[m.id].avg);});
+}
+function renderBars(){let sorted=segments.slice().sort((a,b)=>latest.segSummary[b.id].avg-latest.segSummary[a.id].avg);$('segmentBars').innerHTML=sorted.map(s=>`<div class="barrow"><div class="barlabel">${s.name}</div><div class="track"><div class="fill" style="width:${latest.segSummary[s.id].avg*100}%"></div></div><div class="barval">${pct(latest.segSummary[s.id].avg)}</div></div>`).join('');
+ $('segmentNotes').innerHTML=sorted.slice(0,2).map(s=>`<div class="insight"><strong>${s.name} · ${pct(latest.segSummary[s.id].avg)}</strong><p>${s.desc}</p></div>`).join('');}
+function drawLineChart(canvas,series,maxY=1){const ctx=canvas.getContext('2d'),w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);const pad={l:42,r:12,t:14,b:28},cw=w-pad.l-pad.r,ch=h-pad.t-pad.b;
+ ctx.font='11px sans-serif';ctx.strokeStyle='#2b3854';ctx.fillStyle='#9eacc7';ctx.lineWidth=1;
+ for(let i=0;i<=4;i++){let y=pad.t+ch*i/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke();ctx.fillText(Math.round((1-i/4)*maxY*100)+'%',5,y+4);}
+ let n=latest.horizon;[1,Math.ceil(n/4),Math.ceil(n/2),Math.ceil(n*3/4),n].forEach(m=>{let x=pad.l+(m-1)/(n-1||1)*cw;ctx.fillText(m+'m',x-8,h-7);});
+ let palette=['#70d7e8','#7aa7ff','#f5c46b','#f07f83','#75d6ad','#c49cff'];series.forEach((s,i)=>{ctx.strokeStyle=palette[i%palette.length];ctx.lineWidth=2.2;ctx.beginPath();s.data.forEach((v,j)=>{let x=pad.l+j/(n-1||1)*cw,y=pad.t+ch*(1-v/maxY);if(j===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();});
+ let lx=pad.l;series.forEach((s,i)=>{let y=h-1;ctx.fillStyle=palette[i%palette.length];ctx.fillRect(lx,y-9,12,3);ctx.fillStyle='#b8c6de';ctx.fillText(s.name,lx+16,y-5);lx+=Math.min(145,ctx.measureText(s.name).width+35);}); }
+function renderCharts(){let segSeries=['equip','fab','pack','design','dc'].map(id=>({name:({equip:'设备',fab:'晶圆厂',pack:'封测',design:'设计商',dc:'数据中心'})[id],data:latest.segPaths[id]}));drawLineChart($('segmentChart'),segSeries);
+ let ids=['dy','y','nd','ga','ge','sb'];let names=['Dy/Tb','Y','NdPr磁材','Ga','Ge','Sb'];drawLineChart($('materialChart'),ids.map((id,i)=>({name:names[i],data:latest.paths[id].map(p=>p.unmet)})));}
+function renderInsights(){let c=readControls(),risk=latest.sox;let label=risk<.03?'低':risk<.12?'温和':risk<.28?'显著':'高';let tone=risk<.03?'ok':'warn';let topSeg=segments.slice().sort((a,b)=>latest.segSummary[b.id].avg-latest.segSummary[a.id].avg)[0];
+ const cards=[
+  ['当前情景判断',`在当前设定下，半导体链综合压力为 ${pct(latest.overall)}，SOX 链条压力代理值为 ${pct(risk)}（${label}）。压力最高环节是“${topSeg.name}”。这表示供应链暴露的相对水平，不代表产量必然同比下降同等幅度。`],
+  ['库存与时间',latest.firstDepletion?`模型中至少一种材料在第 ${latest.firstDepletion} 个月触及库存底线。观察期内最脆弱的通常不是总量最大的材料，而是库存短、认证周期长、替代来源受限的材料。`:`当前参数下，观察期内没有材料库存被完全耗尽；但库存可能已下降，且局部供应商/规格的可用库存可能早于行业均值耗尽。`],
+  ['国际协作能改变什么',`把国际合作有效度从当前 ${c.cooperation}% 提高，主要增加可动员替代供给并改善跨境产能兑现；它无法瞬间创造分离、金属化、磁材制造或高纯品认证能力。高物流/合规摩擦会显著折损合作的实际效果。`],
+  ['对 SOX 投资的含义',`供应冲击本身更容易形成设备交付、厂务备件和部分特殊材料的尾部风险；对 GPU/CPU 设计公司的影响多数是间接的。若 AI 资本开支与订单强劲，市场可能先压缩风险溢价而非下修芯片需求；若瓶颈进入交付与毛利率，才更可能形成基本面冲击。`]
+ ];$('investmentNotes').innerHTML=cards.map((x,i)=>`<div class="insight"><strong>${x[0]}</strong><p>${x[1]}</p></div>`).join('');}
+const presets={base:{shock:20,duration:6,horizon:36,inventory:110,altSpeed:50,cooperation:55,recycling:35,substitution:30,priority:70,logistics:20},target:{shock:60,duration:12,horizon:36,inventory:90,altSpeed:45,cooperation:45,recycling:30,substitution:25,priority:65,logistics:35},hard:{shock:95,duration:24,horizon:36,inventory:70,altSpeed:35,cooperation:30,recycling:25,substitution:20,priority:55,logistics:55},ally:{shock:70,duration:18,horizon:36,inventory:120,altSpeed:75,cooperation:90,recycling:65,substitution:55,priority:80,logistics:15}};
+document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>setControls(presets[b.dataset.preset])));
+controlIds.forEach(id=>$(id).addEventListener('input',update));$('reset').addEventListener('click',()=>{materials[0].china=88;materials[0].target=90;materials[0].stock=2.5;materials[0].alt=18;materials[0].ramp=24;materials[0].recycle=5;materials[0].sub=12;materials[0].lag=9;materials[1].china=82;materials[1].target=95;materials[1].stock=2;materials[1].alt=15;materials[1].ramp=20;materials[1].recycle=4;materials[1].sub=8;materials[1].lag=12;materials[2].china=85;materials[2].target=80;materials[2].stock=3;materials[2].alt=25;materials[2].ramp=20;materials[2].recycle=9;materials[2].sub=20;materials[2].lag=8;materials[3].china=90;materials[3].target=40;materials[3].stock=3;materials[3].alt=20;materials[3].ramp=18;materials[3].recycle=8;materials[3].sub=22;materials[3].lag=10;materials[4].china=65;materials[4].target=40;materials[4].stock=4;materials[4].alt=25;materials[4].ramp=18;materials[4].recycle=12;materials[4].sub=18;materials[4].lag=9;materials[5].china=60;materials[5].target=35;materials[5].stock=3.5;materials[5].alt=25;materials[5].ramp=15;materials[5].recycle=8;materials[5].sub=25;materials[5].lag=7;renderMaterialRows();setControls(presets.target);});
+$('export').addEventListener('click',()=>{if(!latest)return;let rows=[['Material','China exposure %','Control scope %','Inventory months','Average unmet demand %','Peak unmet demand %','First depletion month'],...materials.map(m=>[m.name,m.china,m.target,m.stock,pct(latest.matSummary[m.id].avg),pct(latest.matSummary[m.id].peak),latest.matSummary[m.id].depleted||'Not depleted']),[],['Segment','Average pressure %','Peak pressure %'],...segments.map(s=>[s.name,pct(latest.segSummary[s.id].avg),pct(latest.segSummary[s.id].peak)])];let csv=rows.map(r=>r.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\n');let blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='rare-earth-semiconductor-scenario.csv';a.click();URL.revokeObjectURL(a.href);});
+renderMaterialRows();setControls(presets.target);window.addEventListener('resize',()=>{if(latest)renderCharts();});
+</script>
+</body>
+</html>
